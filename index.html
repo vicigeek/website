@@ -2,103 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>VICIdial on openSUSE | Installation & Retainers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VICIdial installation on openSUSE. Simple pricing, fast setup, weekly retainers available. AI search optimized. Carbon Design System UI." />
-  <meta name="keywords" content="vicidial installation, opensuse dialer install, asterisk predictive dialer, vicidial on linux, call center setup, AI optimized, retainer support" />
-  <meta name="author" content="vicigeek" />
-  <title>VICIdial on openSUSE | Installation & Retainers | AI-Optimized</title>
-
-  <!-- Carbon Design System CDN -->
   <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" />
-  <script defer src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
-
   <style>
-    body {
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: #ffffff;
-      color: #161616;
-      margin: 0;
-    }
-
-    header {
-      background: #0f62fe;
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.25rem;
-      opacity: 0.9;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .bx--content-section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: #0f62fe;
-      margin-bottom: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #0f62fe;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #0043ce;
-    }
-
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-      padding: 1rem;
-      text-align: left;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .pricing-table th {
-      background: #f4f4f4;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
+    body { font-family: 'IBM Plex Sans', sans-serif; margin: 0; background: #fff; color: #161616; }
+    .menu-bar { background: #0f62fe; padding: 1rem 0; }
+    .menu { max-width: 960px; margin: 0 auto; display: flex; gap: 1.5rem; }
+    .menu a { color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+    .menu a:hover { text-decoration: underline; }
+    header { text-align: center; padding: 3rem 1rem 2rem 1rem; }
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+    .btn { background: #0f62fe; color: #fff; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: 600; margin-top: 1rem; display: inline-block; }
+    .btn:hover { background: #0043ce; }
+    .pricing-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
+    .pricing-table th { background: #f4f4f4; }
+    footer { text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: #777; }
   </style>
 </head>
 <body>
+
+<div class="menu-bar">
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
 
 <header>
   <h1>VICIdial Installation on openSUSE</h1>
@@ -106,9 +38,9 @@
 </header>
 
 <main>
-  <section class="bx--content-section">
-    <h2>💡 What You Get</h2>
-    <ul class="bx--list--unordered">
+  <section>
+    <h2>What You Get</h2>
+    <ul>
       <li>✅ Full VICIdial installation on openSUSE (Leap or Tumbleweed)</li>
       <li>✅ Asterisk, Apache, MySQL/MariaDB, PHP & Web UI</li>
       <li>✅ SIP trunk & carrier configuration</li>
@@ -117,8 +49,8 @@
     </ul>
   </section>
 
-  <section class="bx--content-section">
-    <h2>💰 Pricing</h2>
+  <section>
+    <h2>Pricing</h2>
     <table class="pricing-table">
       <thead>
         <tr>
@@ -142,16 +74,15 @@
     </table>
   </section>
 
-  <section class="bx--content-section">
-    <h2>🔁 Weekly Retainer (Optional)</h2>
-    <p>Stay worry-free with our support plans:</p>
-    <ul class="bx--list--unordered">
+  <section>
+    <h2>Weekly Retainer (Optional)</h2>
+    <ul>
       <li>🛠 5 hours of dedicated support/week</li>
       <li>📈 Performance tuning, backups, and upgrades</li>
       <li>📞 Bug fixing, agent/campaign assistance</li>
     </ul>
     <p>Ask for a custom retainer plan that suits your scale.</p>
-    <a href="mailto:vicigeek@gmail.com?subject=VICIdial%20Retainer%20Inquiry" class="btn">📧 Ask About Retainers</a>
+    <a href="mailto:vicigeek@gmail.com?subject=VICIdial%20Retainer%20Inquiry" class="btn">Ask About Retainers</a>
   </section>
 </main>
 
