@@ -147,7 +147,7 @@
             height: 60px;
             border-radius: 50%;
             background-color: #0088cc; /* Telegram blue */
-            color: white;
+            color: white; /* SVG will inherit this */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
@@ -156,16 +156,21 @@
         }
 
         /* Responsive Design Adjustments for Header */
-        /* By default, Carbon handles the menu trigger visibility. 
-           No need for explicit @media queries here if Carbon's JS is active. */
+        /* By default, Carbon handles the menu trigger visibility. */
 
         /* Ensure links in header panel are styled appropriately if needed */
         .bx--header-panel .bx--header__menu-item .bx--header__menu-link {
-            color: #161616; /* Or your desired link color for the panel */
+            color: #161616; 
             text-decoration: none;
         }
         .bx--header-panel .bx--header__menu-item .bx--header__menu-link:hover {
-            background-color: #e0e0e0; /* Example hover */
+            background-color: #e0e0e0; 
+        }
+
+        /* Custom styles for a "neater" menubar */
+        .bx--header__menu-bar .bx--header__menu-link {
+            padding-left: 0.875rem; /* 14px */
+            padding-right: 0.875rem; /* 14px */
         }
 
     </style>
@@ -173,7 +178,7 @@
 <body data-carbon-theme="g10"> 
     <header data-header class="bx--header">
         <a href="#" class="bx--header__name">
-            <span class="bx--header__name--prefix">&nbsp;</span>VICIgeek
+            <span class="bx--header__name--prefix"></span>VICIgeek
         </a>
         <nav class="bx--header__nav" aria-label="VICIgeek navigation">
             <ul class="bx--header__menu-bar" aria-label="VICIgeek menu bar">
@@ -386,8 +391,7 @@
                         <p class="bx--type-zeta" style="margin-bottom: 2rem;">Explore helpful guides and resources for VICIdial users and administrators.</p>
                     </div>
                 </div>
-                <div class="bx--row">
-                    <script>
+                <div class="bx--row" id="guides-container-js"> <script>
                         const guides = [
                             { title: "VICIdial Installation: A Step-by-Step Guide", slug: "vicidial-installation-guide" },
                             { title: "Basic VICIdial Configuration for New Users", slug: "basic-vicidial-configuration" },
@@ -421,42 +425,38 @@
                             { title: "Customizing VICIdial Music on Hold", slug: "vicidial-music-on-hold" }
                         ];
 
-                        const guidesContainer = document.currentScript.parentElement; // Get the parent .bx--row
+                        // Target the specific container by ID
+                        const guidesContainer = document.getElementById('guides-container-js'); 
 
-                        guides.forEach(guide => {
-                            const colDiv = document.createElement('div');
-                            colDiv.className = 'bx--col-sm-4 bx--col-md-4 bx--col-lg-4';
+                        if (guidesContainer) { // Check if container exists
+                            guides.forEach(guide => {
+                                const colDiv = document.createElement('div');
+                                colDiv.className = 'bx--col-sm-4 bx--col-md-4 bx--col-lg-4';
 
-                            const tileDiv = document.createElement('div');
-                            tileDiv.className = 'bx--tile custom-content-tile';
-                            
-                            const contentWrapperDiv = document.createElement('div');
-                            contentWrapperDiv.className = 'bx--tile-content-wrapper';
+                                const tileDiv = document.createElement('div');
+                                tileDiv.className = 'bx--tile custom-content-tile';
+                                
+                                const contentWrapperDiv = document.createElement('div');
+                                contentWrapperDiv.className = 'bx--tile-content-wrapper';
 
-                            const titleH4 = document.createElement('h4');
-                            titleH4.className = 'bx--h4';
-                            titleH4.style.marginBottom = '0.5rem';
-                            titleH4.textContent = guide.title;
-                            
-                            contentWrapperDiv.appendChild(titleH4);
+                                const titleH4 = document.createElement('h4');
+                                titleH4.className = 'bx--h4';
+                                titleH4.style.marginBottom = '0.5rem';
+                                titleH4.textContent = guide.title;
+                                
+                                contentWrapperDiv.appendChild(titleH4);
 
-                            // Optional: Add a short description paragraph here if needed
-                            // const descP = document.createElement('p');
-                            // descP.className = 'bx--type-epsilon';
-                            // descP.style.marginBottom = '1rem';
-                            // descP.textContent = 'A brief description of this amazing VICIdial guide.';
-                            // contentWrapperDiv.appendChild(descP);
-
-                            const linkA = document.createElement('a');
-                            linkA.className = 'bx--link';
-                            linkA.href = `guide-${guide.slug}.html`; // Placeholder link
-                            linkA.innerHTML = `View Guide <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>`;
-                            
-                            tileDiv.appendChild(contentWrapperDiv);
-                            tileDiv.appendChild(linkA);
-                            colDiv.appendChild(tileDiv);
-                            guidesContainer.appendChild(colDiv);
-                        });
+                                const linkA = document.createElement('a');
+                                linkA.className = 'bx--link';
+                                linkA.href = `guide-${guide.slug}.html`; 
+                                linkA.innerHTML = `View Guide <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>`;
+                                
+                                tileDiv.appendChild(contentWrapperDiv);
+                                tileDiv.appendChild(linkA);
+                                colDiv.appendChild(tileDiv);
+                                guidesContainer.appendChild(colDiv);
+                            });
+                        }
                     </script>
                 </div>
             </div>
@@ -491,8 +491,9 @@
 
     <div class="telegram-chat">
         <a href="https://t.me/your_telegram_username" target="_blank" aria-label="Chat on Telegram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a.52.52 0 0 0-.041.041l-.018.018c-.176.163-.354.324-.523.473-.244.215-.492.422-.727.62a.456.456 0 0 0-.214.425c.01.127.186.299.33.393.148.098.343.159.488.192.175.042.38.077.568.077.217 0 .426-.037.618-.11.2-.074.39-.17.568-.288l.004-.002c.002-.002.003-.003.004-.004l.003-.002c.18-.106.354-.22.518-.338l.055-.038a1.2 1.2 0 0 0 .22-.158c.32-.23.6-.442.83-.629.24-.195.456-.375.64-.53.18-.155.33-.28.44-.383l.096-.088c.11-.1.21-.2.3-.314.09-.112.17-.23.24-.35s.12-.24.15-.36c.03-.12.03-.24.01-.36s-.05-.22-.09-.32c-.04-.1-.09-.18-.15-.25-.06-.07-.12-.13-.2-.19l-.096-.088c-.08-.06-.17-.12-.26-.17l-.004-.002c-.002-.002-.003-.003-.004-.004l-.003-.002c-.18-.106-.354-.22-.518-.338l-.055-.038a1.2 1.2 0 0 0-.22-.158c-.32-.23-.6-.442-.83-.629-.24-.195-.456-.375-.64-.53l-.004-.002z"/>
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor">
+                <path d="M41.41,7.44l-32,12a2,2,0,0,0-.09,3.7l7.22,2.67,2.67,7.22a2,2,0,0,0,3.7-.09l12-32A2,2,0,0,0,41.41,7.44ZM20.23,27.85,17.35,20l17.23-10.3L20.23,27.85Z"/>
+                <path d="M21.12,30.14l8.42,3.12a1,1,0,0,0,1.23-1.23l-3.12-8.42L21.12,30.14Z"/>
             </svg>
         </a>
     </div>
@@ -513,27 +514,26 @@
         // Initialize all Carbon components on the page
         CarbonComponents.watch(document);
 
-        // Contact Form Handling: Creates a mailto link for sending an email
+        // Contact Form Handling: Creates a mailto link
         const contactForm = document.getElementById('contactForm');
         const formStatus = document.getElementById('form-status');
 
         if (contactForm) {
             contactForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
+                event.preventDefault(); 
 
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const subject = document.getElementById('subject').value;
                 const message = document.getElementById('message').value;
                 
-                // Construct mailto link
                 const mailtoLink = `mailto:vicigeek@gmail.com?subject=${encodeURIComponent(subject + " - From " + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
                 
-                window.location.href = mailtoLink; // Open user's email client
+                window.location.href = mailtoLink;
 
                 if (formStatus) {
                     formStatus.textContent = "Your email client should open. If not, please manually email vicigeek@gmail.com.";
-                    formStatus.classList.add('bx--form__helper-text'); // Style the status message
+                    formStatus.classList.add('bx--form__helper-text'); 
                 }
             });
         }
@@ -544,32 +544,31 @@
             currentYearElement.textContent = new Date().getFullYear();
         }
 
-        // Smooth scroll for navigation links (including those in the header panel)
+        // Smooth scroll for navigation links
         document.addEventListener('click', function(event) {
-            // Check if the clicked element is a link and starts with '#'
             if (event.target.matches('a[href^="#"]')) {
                 const href = event.target.getAttribute('href');
-                // Ensure it's an internal link to an element ID
                 if (href && href.length > 1) {
                     const targetElement = document.querySelector(href);
                     if (targetElement) {
-                        event.preventDefault(); // Prevent default anchor jump
+                        event.preventDefault(); 
 
-                        // Close the header panel if it's open (Carbon might do this, but explicit is safer)
                         const header = document.querySelector('.bx--header');
-                        if (header && CarbonComponents && CarbonComponents.Header) {
+                        // Attempt to close mobile nav panel if open
+                        if (header && typeof CarbonComponents !== 'undefined' && CarbonComponents.Header) {
                             const headerInstance = CarbonComponents.Header.components.get(header);
-                            if (headerInstance && headerInstance.isNavOpen()) {
-                                headerInstance.state.navOpen = false; // A way to try and close it, might need official API
-                                // Or simulate click on menu button again if panel is open
+                            if (headerInstance && typeof headerInstance.isNavOpen === 'function' && headerInstance.isNavOpen()) {
                                 const menuButton = header.querySelector('[data-header-menu-button]');
-                                if(menuButton && header.classList.contains('bx--header--expanded')){
-                                   // menuButton.click(); // This might be too aggressive or cause issues
+                                if (menuButton && header.classList.contains('bx--header--expanded')) {
+                                     // Carbon's Header component usually handles closing on item click,
+                                     // but if not, a direct click simulation might be needed, though risky.
+                                     // For now, rely on Carbon's default behavior or manual close by user.
+                                     // headerInstance.state.navOpen = false; // Direct state manipulation is not recommended
                                 }
                             }
                         }
                         
-                        const headerHeight = document.querySelector('.bx--header').offsetHeight;
+                        const headerHeight = header ? header.offsetHeight : 0;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
@@ -584,8 +583,3 @@
     </script>
 </body>
 </html>
-```
-
-I've also slightly adjusted the smooth scroll JavaScript to be more robust and to attempt to close the mobile navigation panel when a link is clicked, though Carbon's built-in behavior should ideally handle this. The guides are now generated dynamically using a small script to make it easier to manage them. Each guide tile now correctly contains a link.
-
-Let me know if you'd like any further adjustmen
