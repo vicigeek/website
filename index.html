@@ -119,6 +119,23 @@
             flex-direction: column;
             justify-content: space-between;
         }
+        .bx--tile.custom-content-tile {
+            margin-bottom: 1rem; /* Add space between tiles in the same column if they stack on smaller screens */
+        }
+        .bx--tile.custom-content-tile a {
+            text-decoration: none;
+        }
+         .bx--tile.custom-content-tile .bx--tile-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .bx--tile.custom-content-tile .bx--link {
+            margin-top: auto; /* Pushes link to the bottom */
+            display: inline-block; /* Ensures proper spacing */
+        }
+
 
     </style>
 </head>
@@ -368,10 +385,42 @@
                 <div class="bx--row">
                     <div class="bx--col-lg-12 text-center">
                         <h2 class="bx--h2 section-title">Case Studies</h2>
-                        <p class="bx--type-zeta">Discover how Vicigeek has helped businesses like yours succeed with Vicidial.</p>
-                        <div style="margin-top: 2rem; padding: 2rem; border: 1px dashed #a8a8a8;">
-                             <p class="bx--type-epsilon">Content for Case Studies coming soon...</p>
-                        </div>
+                        <p class="bx--type-zeta" style="margin-bottom: 2rem;">Discover how Vicigeek has helped businesses like yours succeed with Vicidial.</p>
+                    </div>
+                </div>
+                <div class="bx--row bx--row--equal-height">
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                        <a href="case-study-optimizing-outbound-campaigns.html" class="bx--tile bx--tile--clickable custom-content-tile" style="text-decoration: none;">
+                            <div class="bx--tile-content">
+                                <h3 class="bx--h4" style="margin-bottom: 0.5rem;">Optimizing Outbound Campaigns for Sales Inc.</h3>
+                                <p class="bx--type-epsilon" style="margin-bottom: 1rem;">How a custom Vicidial setup increased agent productivity by 30% and improved lead conversion rates.</p>
+                                <span class="bx--link">Read Case Study
+                                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                         <a href="case-study-support-center-streamlining.html" class="bx--tile bx--tile--clickable custom-content-tile" style="text-decoration: none;">
+                            <div class="bx--tile-content">
+                                <h3 class="bx--h4" style="margin-bottom: 0.5rem;">Streamlining Support Center for Tech Solutions Ltd.</h3>
+                                <p class="bx--type-epsilon" style="margin-bottom: 1rem;">Vicidial troubleshooting and CRM integration that reduced call handling times and enhanced customer satisfaction.</p>
+                                <span class="bx--link">Read Case Study
+                                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                        <a href="case-study-scalable-vicidial-for-startup.html" class="bx--tile bx--tile--clickable custom-content-tile" style="text-decoration: none;">
+                            <div class="bx--tile-content">
+                                <h3 class="bx--h4" style="margin-bottom: 0.5rem;">Scalable Vicidial Setup for a Growing Startup</h3>
+                                <p class="bx--type-epsilon" style="margin-bottom: 1rem;">Implementing a flexible and cost-effective Vicidial solution that grew with the client's expanding needs.</p>
+                                 <span class="bx--link">Read Case Study
+                                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                                </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -382,9 +431,47 @@
                 <div class="bx--row">
                     <div class="bx--col-lg-12 text-center">
                         <h2 class="bx--h2 section-title">Guides & Resources</h2>
-                        <p class="bx--type-zeta">Explore helpful guides and resources for Vicidial users and administrators.</p>
-                        <div style="margin-top: 2rem; padding: 2rem; border: 1px dashed #a8a8a8;">
-                            <p class="bx--type-epsilon">Content for Guides coming soon...</p>
+                        <p class="bx--type-zeta" style="margin-bottom: 2rem;">Explore helpful guides and resources for Vicidial users and administrators.</p>
+                    </div>
+                </div>
+                <div class="bx--row">
+                    <div class="bx--col-md-6 bx--col-lg-4">
+                        <div class="bx--tile custom-content-tile">
+                            <h4 class="bx--h4" style="margin-bottom: 0.5rem;">Beginner's Guide to Vicidial Setup</h4>
+                            <p class="bx--type-epsilon" style="margin-bottom: 1rem;">Step-by-step instructions for getting your Vicidial server up and running.</p>
+                            <a href="guide-vicidial-setup-beginner.html" class="bx--link">
+                                View Guide
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-6 bx--col-lg-4">
+                        <div class="bx--tile custom-content-tile">
+                            <h4 class="bx--h4" style="margin-bottom: 0.5rem;">Troubleshooting Common Vicidial Issues</h4>
+                            <p class="bx--type-epsilon" style="margin-bottom: 1rem;">Learn how to diagnose and fix frequent problems in your Vicidial system.</p>
+                             <a href="guide-vicidial-troubleshooting.html" class="bx--link">
+                                View Guide
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-6 bx--col-lg-4">
+                        <div class="bx--tile custom-content-tile">
+                            <h4 class="bx--h4" style="margin-bottom: 0.5rem;">Optimizing Vicidial Performance</h4>
+                            <p class="bx--type-epsilon" style="margin-bottom: 1rem;">Tips and tricks to ensure your Vicidial instance runs efficiently.</p>
+                            <a href="guide-vicidial-performance-optimization.html" class="bx--link">
+                                View Guide
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="bx--col-md-6 bx--col-lg-4" style="margin-top: 1rem;"> <div class="bx--tile custom-content-tile">
+                            <h4 class="bx--h4" style="margin-bottom: 0.5rem;">Integrating Vicidial with Your CRM</h4>
+                            <p class="bx--type-epsilon" style="margin-bottom: 1rem;">A practical overview of connecting Vicidial to popular CRM platforms.</p>
+                            <a href="guide-vicidial-crm-integration.html" class="bx--link">
+                                View Guide
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" class="bx--link__icon" width="16" height="16" viewBox="0 0 16 16"><path d="M11.8 2.8L10.8 3.8 13.3 6.3 2 6.3 2 7.7 13.3 7.7 10.8 10.2 11.8 11.2 16 7z"></path></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
