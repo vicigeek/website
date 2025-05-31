@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Install and configure VICIdial with Vicigeek. Explore how it compares with GoAutoDial, FreePBX, and Twilio. Learn best practices for open-source call center setups."/>
+  <title>Beginner’s Guide to VICIdial Setup | Vicigeek</title>
+
+  <!-- Carbon Design System -->
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #f4f4f4;
+      color: #161616;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #0f62fe;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .hero {
+      background-color: #0f62fe;
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .bx--content-section {
+      margin-bottom: 2.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e5e5e5;
+    }
+
+    a {
+      color: #0f62fe;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+      text-align: center;
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      color: #6f6f6f;
+    }
+
+    .bx--tile {
+      margin-bottom: 1rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">VICIgeek</div>
+  <nav>
+    <a href="index.htm">Home</a>
+    <a href="#setup">Setup</a>
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="#why-vicigeek">Why Vicigeek</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>Beginner’s Guide to VICIdial Setup</h1>
+    <p>Start your open-source call center journey with the industry’s most trusted dialer platform.</p>
+  </div>
+
+  <div id="compare" class="bx--content-section">
+    <h2>📊 VICIdial vs Alternatives</h2>
+    <p>This table compares VICIdial to GoAutoDial, FreePBX, and Twilio Flex based on key call center criteria.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>VICIdial</th>
+          <th>GoAutoDial</th>
+          <th>FreePBX</th>
+          <th>Twilio Flex</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Open Source</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Built on Asterisk</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+        <tr><td>Predictive Dialing</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td></tr>
+        <tr><td>CRM Integration</td><td>✅</td><td>Partial</td><td>❌</td><td>✅</td></tr>
+        <tr><td>Scalability</td><td>High (500+ agents)</td><td>Medium</td><td>Low</td><td>Very High</td></tr>
+        <tr><td>Self-hosted</td><td>✅</td><td>✅</td><td>✅</td><td>❌ (Cloud-only)</td></tr>
+        <tr><td>Price</td><td>Free</td><td>Free</td><td>Free</td><td>$$$</td></tr>
+        <tr><td><strong>Stability</strong></td><td>Proven, high-volume</td><td>Moderate</td><td>Basic PBX only</td><td>Depends on cloud infra</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>✅ VICIdial Benefits at a Glance</h2>
+    <div class="grid-3">
+      <div class="bx--tile">
+        <h3>🔧 Built for Call Centers</h3>
+        <p>Supports inbound, outbound, and blended calling with full agent monitoring and campaign tools.</p>
+      </div>
+      <div class="bx--tile">
+        <h3>🌐 Web-Based Agents</h3>
+        <p>Agents log in securely via browser, with no complex setups or VoIP softphones needed.</p>
+      </div>
+      <div class="bx--tile">
+        <h3>💾 Full Recording & Logging</h3>
+        <p>Every call is logged and recorded. Easily access recordings by date, agent, or campaign.</p>
+      </div>
+      <div class="bx--tile">
+        <h3>📈 Real-Time Reports</h3>
+        <p>View live agent statuses, dropped call rates, wait times, and campaign health in dashboards.</p>
+      </div>
+      <div class="bx--tile">
+        <h3>🔒 Secure & Open</h3>
+        <p>Open-source and secure. You control the infrastructure, firewall, and compliance standards.</p>
+      </div>
+      <div class="bx--tile">
+        <h3>🚀 Scalable Architecture</h3>
+        <p>Run small teams or 500+ agent call centers using multi-server clustering.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="why-vicigeek" class="bx--content-section">
+    <h2>🤝 Why Choose <span style="color:#0f62fe;">VICIgeek</span>?</h2>
+    <ul class="bx--list--unordered">
+      <li><strong>Specialized VICIdial Focus:</strong> We live and breathe call centers</li>
+      <li><strong>ISO-based Deployments:</strong> Clean, fast, reliable setups using ViciBox</li>
+      <li><strong>Custom Dashboards & Scripts:</strong> We tailor to your workflow</li>
+      <li><strong>Post-deployment Support:</strong> We don’t disappear after installation</li>
+    </ul>
+    <p><strong>VICIgeek</strong> = Technical excellence + Business sense + VICIdial mastery</p>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>📚 Useful VICIdial Resources</h2>
+    <ul class="bx--list--unordered">
+      <li><a href="http://www.vicidial.org/VICIDIALforum/" target="_blank">VICIdial Community Forum</a></li>
+      <li><a href="http://www.vicidial.org/docs/" target="_blank">VICIdial Documentation</a></li>
+      <li><a href="http://www.vicibox.com/server/index.html" target="_blank">ViciBox ISO Downloads</a></li>
+      <li><a href="https://www.asterisk.org/" target="_blank">Asterisk Official</a></li>
+      <li><a href="https://mariadb.org/" target="_blank">MariaDB Website</a></li>
+      <li><a href="https://www.php.net/" target="_blank">PHP Official Site</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 <strong>VICIgeek</strong> — Built using <a href="https://carbondesignsystem.com/" target="_blank">IBM Carbon Design</a>. Not affiliated with VICIdial.
+</footer>
+
+</body>
+</html>
