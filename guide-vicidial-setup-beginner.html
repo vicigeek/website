@@ -291,7 +291,7 @@
                         <p>The system will then copy files and install the operating system and VICIdial components. This process can take some time.</p>
 
                         <h3>Step 5: The VICIbox Express Install Script</h3>
-                        <p>After the base system installation and the first reboot, VICIbox typically runs an express installation script (e.g., <code>vicibox-express</code> or it might start automatically). This script finalizes the VICIdial setup, configures the database, and sets up basic parameters. You might be prompted for a few confirmations.</p>
+                        <p>After the base system installation and the first reboot, VICIbox typically runs an express installation script (e.g., <code>vicibox-express</code> ). This script finalizes the VICIdial setup, configures the database, and sets up basic parameters. You might be prompted for a few confirmations.</p>
                         <p>If it doesn't start automatically, you might need to log in as root with the password you set and run the command: <code>vicibox-express</code> or <code>vicibox-install</code> (refer to the specific VICIbox version documentation if unsure).</p>
 
                         <h3>Step 6: Reboot and Initial Login</h3>
@@ -306,7 +306,7 @@
                         <ul class="bx--list bx--list--unordered">
                             <li class="bx--list__item"><strong>Change Default Passwords:</strong> Immediately change the default admin password, phone registration passwords, and any other default credentials.</li>
                             <li class="bx--list__item"><strong>Network Configuration:</strong> Ensure your server has a static IP address if it's on a local network.</li>
-                            <li class="bx--list__item"><strong>Check Services:</strong> Use commands like <code>vicibox-status</code> (if available) or check individual services (Apache, MySQL, Asterisk) to ensure everything is running.</li>
+                            <li class="bx--list__item"><strong>Check Services:</strong> Use commands like <code>screen -ls</code> you should shee 9-11 screens or check individual services (Apache, MySQL, Asterisk) to ensure everything is running.</li>
                             <li class="bx--list__item"><strong>Firewall:</strong> Configure your firewall to allow necessary traffic (SIP, RTP, HTTP/HTTPS) but block unnecessary ports.</li>
                         </ul>
 
