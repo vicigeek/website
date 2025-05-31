@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Diagnose and fix the most common VICIdial problems with this expert troubleshooting guide. Learn how to solve audio issues, login failures, dropped calls, and more."/>
+  <title>Troubleshooting Common VICIdial Issues | Vicigeek</title>
+
+  <!-- IBM Carbon Design -->
+  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #f4f4f4;
+      color: #161616;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #0f62fe;
+      padding: 1rem 2rem;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .hero {
+      background-color: #0f62fe;
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e5e5e5;
+    }
+
+    a {
+      color: #0f62fe;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cta {
+      background-color: #ffffff;
+      padding: 2rem;
+      border: 2px solid #0f62fe;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      color: #6f6f6f;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0f62fe;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #0353e9;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">VICIgeek</div>
+  <nav>
+    <a href="index.htm">Home</a>
+    <a href="setup.html">Setup Guide</a>
+    <a href="#">Docs</a>
+    <a href="http://www.vicidial.org/VICIDIALforum/" target="_blank">Forum</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <h1>Troubleshooting Common VICIdial Issues</h1>
+    <p>Learn how to diagnose and fix frequent problems in your VICIdial contact center platform.</p>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>🎧 No Audio in Calls</h2>
+    <ul class="bx--list--unordered">
+      <li>Check if your agents are using Chrome or Firefox (WebRTC-supported).</li>
+      <li>Make sure RTP ports (10000–20000) are open on the firewall.</li>
+      <li>Verify Asterisk is listening: <code>netstat -an | grep 5060</code>.</li>
+      <li>Inspect SIP config and NAT settings.</li>
+    </ul>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>🔐 Agent Login Issues</h2>
+    <ul class="bx--list--unordered">
+      <li>Ensure credentials exist in <code>vicidial_users</code>.</li>
+      <li>Fix login loops by clearing browser cache or restarting Apache.</li>
+      <li>Synchronize server time with <code>ntpdate pool.ntp.org</code>.</li>
+    </ul>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>📉 High Drop Rates</h2>
+    <ul class="bx--list--unordered">
+      <li>Lower the dial level for the campaign.</li>
+      <li>Enable "Drop Call Percentage" limiter.</li>
+      <li>Monitor CPU and load averages using <code>top</code> or <code>htop</code>.</li>
+    </ul>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>📁 Missing Recordings</h2>
+    <ul class="bx--list--unordered">
+      <li>Check disk space with <code>df -h</code>.</li>
+      <li>Verify cron scripts that move recordings aren't failing silently.</li>
+      <li>Look in <code>/var/spool/asterisk/monitorDONE/</code>.</li>
+    </ul>
+  </div>
+
+  <div class="bx--content-section">
+    <h2>📊 Quick Fix Table</h2>
+    <table>
+      <thead>
+        <tr><th>Problem</th><th>Cause</th><th>Fix</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>No Audio</td><td>Firewall, NAT, or SIP config</td><td>Check RTP ports and NAT</td></tr>
+        <tr><td>Can't Login</td><td>Apache down / wrong user</td><td>Restart Apache / reset password</td></tr>
+        <tr><td>High Drop %</td><td>Dial level too high</td><td>Reduce dial ratio</td></tr>
+        <tr><td>No Recordings</td><td>Disk full or cron error</td><td>Free space, fix cron</td></tr>
+        <tr><td>MySQL Lag</td><td>Too many queries</td><td>Optimize tables</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cta">
+    <h2>🛠 Need Help Fixing Your VICIdial System?</h2>
+    <p><strong>VICIgeek</strong> offers expert remote troubleshooting, full-stack maintenance, and 24/7 emergency support. Whether it's no audio, login loops, or high drop rates—we've fixed them all.</p>
+    <a class="btn" href="mailto:support@vicigeek.com?subject=VICIdial Troubleshooting Request">Contact VICIgeek Support</a>
+  </div>
+</div>
+
+<footer>
+  © 2025 <strong>VICIgeek</strong> — Built with <a href="https://carbondesignsystem.com/" target="_blank">IBM Carbon Design</a>. Not affiliated with VICIdial.
+</footer>
+
+</body>
+</html>
