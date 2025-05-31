@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VICIdial Installation Guide (VICIbox ISO) - VICIgeek</title>
     <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Global styles (consistent with main site) */
+        /* Global styles */
         body {
             font-family: 'IBM Plex Sans', sans-serif;
             scroll-behavior: smooth;
             background-color: #f4f4f4; /* Carbon Gray 10 */
             color: #161616; /* Carbon Gray 100 */
             padding-top: 3rem; /* Height of the header */
+            margin: 0; /* Ensure no default body margin */
         }
 
         /* Sticky Header */
@@ -22,77 +23,69 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 8000; /* Carbon's z-index for header */
-            background-color: #161616; /* Carbon Gray 100 - Dark header for guide page */
+            z-index: 8000;
+            background-color: #161616;
         }
-        .bx--header__name {
-            color: #ffffff; /* White text for name */
-        }
-        .bx--header__menu-link {
-            color: #f4f4f4; /* Carbon Gray 10 for links */
-        }
-        .bx--header__menu-link:hover {
-            background-color: #393939; /* Carbon Gray 80 for hover */
-        }
-
+        .bx--header__name { color: #ffffff; }
+        .bx--header__menu-link { color: #f4f4f4; }
+        .bx--header__menu-link:hover { background-color: #393939; }
 
         /* Section Padding */
         .page-section {
-            padding-top: 2rem; /* Reduced top padding for guide content */
-            padding-bottom: 3rem; /* 48px */
+            padding-top: 2rem;
+            padding-bottom: 3rem;
         }
 
         /* Centered text utility */
-        .text-center {
-            text-align: center;
-        }
+        .text-center { text-align: center; }
 
         /* Content styling */
         .guide-content {
-            background-color: #ffffff; /* White background for content */
+            background-color: #fbfbfb; /* Subtle off-white for soothing feel */
             padding: 2rem;
-            border-radius: 0.25rem; /* 4px */
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
         .guide-content h1 {
-            margin-bottom: 0.5rem;
-            color: #161616; /* Carbon Gray 100 */
+            margin-bottom: 1rem;
+            color: #161616;
         }
         .guide-content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #e0e0e0; /* Carbon Gray 20 for separator */
-            padding-bottom: 0.5rem;
-            color: #161616; /* Carbon Gray 100 */
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid #0f62fe;
+            padding-bottom: 0.75rem;
+            color: #161616;
         }
         .guide-content h3 {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             margin-bottom: 0.75rem;
-            color: #393939; /* Carbon Gray 80 */
+            color: #393939;
         }
         .guide-content p, .guide-content ul li, .guide-content ol li {
             line-height: 1.6;
             margin-bottom: 1rem;
-            color: #393939; /* Carbon Gray 80 for body text */
+            color: #393939;
         }
         .guide-content ul, .guide-content ol {
-            padding-left: 1.5rem; /* Indent lists */
+            padding-left: 1.5rem;
         }
         .guide-content code {
-            background-color: #e0e0e0; /* Carbon Gray 20 for code blocks */
+            background-color: #e0e0e0;
             padding: 0.2em 0.4em;
             border-radius: 3px;
             font-family: 'IBM Plex Mono', monospace;
-            color: #161616; /* Carbon Gray 100 */
+            color: #161616;
+            border: 1px solid #c6c6c6;
         }
-        .bx--hr {
-            border-color: #e0e0e0; /* Carbon Gray 20 */
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+        .guide-content .bx--hr {
+            border-color: #c6c6c6;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
         }
         .highlight-box {
-            background-color: #e0f7ff; /* Light blue - consider Carbon's $blue-10 or $cyan-10 if using Sass */
-            border-left: 4px solid #0f62fe; /* Carbon Blue 60 */
+            background-color: #e0f7ff;
+            border-left: 4px solid #0f62fe;
             padding: 1rem 1.5rem;
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
@@ -100,33 +93,130 @@
         }
         .highlight-box h4 {
             margin-top: 0;
-            color: #0043ce; /* Darker blue for heading in highlight box - similar to Carbon Blue 70/80 */
+            color: #0043ce;
         }
         .guide-content a.bx--link {
-            color: #0f62fe; /* Carbon Blue 60 for links */
+            color: #0f62fe;
+            font-weight: 500;
         }
+        .guide-content a.bx--link:hover { text-decoration: underline; }
         .guide-content .bx--btn--primary {
-            background-color: #0f62fe; /* Carbon Blue 60 for primary buttons */
+            background-color: #0f62fe;
             color: #ffffff;
         }
-        .guide-content .bx--btn--primary:hover {
-            background-color: #0043ce; /* Carbon Blue 70 for hover */
+        .guide-content .bx--btn--primary:hover { background-color: #0043ce; }
+
+        /* List styling with colored markers */
+        .guide-content .bx--list--unordered > .bx--list__item::before {
+            background-color: #0f62fe;
+        }
+        .guide-content .bx--list--ordered > .bx--list__item::before {
+            color: #0f62fe;
+            font-weight: 600;
+        }
+        .guide-content .bx--list--nested .bx--list__item::before {
+            background-color: #0f62fe;
+        }
+        .guide-content .bx--list--nested.bx--list--ordered > .bx--list__item::before {
+            color: #0f62fe;
+            font-weight: 600;
         }
 
+        /* "Why You Should Hire VICIgeek" Section - Card Styling */
+        .feature-card-row {
+            margin-top: 1.5rem; /* Spacing for rows containing feature cards */
+        }
+        .vicigeek-feature-card {
+            background-color: #ffffff; /* White background for cards */
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0; /* Carbon Gray 20 border */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Refined shadow */
+            height: 100%;
+            margin-bottom: 1.5rem; /* Spacing when cards stack */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .vicigeek-feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+        .vicigeek-feature-card .bx--h4 {
+            color: #0043ce; /* Carbon Blue 70 */
+            margin-bottom: 0.85rem;
+            font-size: 1.1rem; /* Adjusted H4 size */
+        }
+        .vicigeek-feature-card p {
+            color: #393939;
+            line-height: 1.5;
+            font-size: 0.875rem; /* 14px - Carbon's small text size */
+            margin-bottom: 0.5rem;
+            flex-grow: 1;
+        }
 
-        /* Footer styling (consistent with main site) */
+        /* Enhanced Call to Action Section */
+        .contact-cta-section {
+            background-color: #e0f7ff;
+            padding: 2.5rem 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 0.25rem;
+            border-left: 4px solid #0f62fe;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .contact-cta-section .bx--type-gamma {
+            color: #0043ce;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .contact-cta-section .bx--btn--primary {
+            margin-top: 1.25rem !important;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Footer styling */
         .custom-footer {
-            background-color: #161616; /* Carbon Gray 100 */
-            color: #f4f4f4; /* Carbon Gray 10 */
+            background-color: #161616;
+            color: #f4f4f4;
             padding: 2rem 0;
             margin-top: 3rem;
         }
-        .custom-footer p {
-             color: #c6c6c6; /* Carbon Gray 30 */
+        .custom-footer p { color: #c6c6c6; }
+
+        /* Telegram Floating Action Button (FAB) */
+        .telegram-fab {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0088cc; /* Telegram blue */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            z-index: 10000; /* Ensure it's above other content */
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease-out;
         }
+        .telegram-fab:hover {
+            background-color: #0077b3; /* Darker Telegram blue on hover */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        .telegram-fab svg {
+            width: 32px; 
+            height: 32px;
+            fill: white;
+        }
+
     </style>
 </head>
-<body data-carbon-theme="g10"> 
+<body data-carbon-theme="g10">
     <header data-header class="bx--header">
         <a href="index.html" class="bx--header__name">
             <span class="bx--header__name--prefix">&nbsp;</span>VICIgeek
@@ -142,7 +232,7 @@
     <main class="bx--content page-section">
         <div class="bx--grid">
             <div class="bx--row">
-                <div class="bx--col-lg-12 bx--offset-lg-2"> 
+                <div class="bx--col-lg-12 bx--offset-lg-2">
                     <article class="guide-content">
                         <h1 class="bx--h1">VICIdial Installation: A Step-by-Step Guide using VICIbox ISO</h1>
                         <p class="bx--type-zeta">Perfect for beginners looking to get started with VICIdial! This guide will walk you through installing VICIdial using the VICIbox ISO.</p>
@@ -165,7 +255,7 @@
                         <p>Ensure you have the following ready:</p>
                         <ol class="bx--list bx--list--ordered">
                             <li class="bx--list__item"><strong>Hardware:</strong>
-                                <ul class="bx--list bx--list--nested">
+                                <ul class="bx--list bx--list--unordered bx--list--nested">
                                     <li class="bx--list__item">Minimum: 2GB RAM (4GB+ strongly recommended for smoother operation), 2 CPU cores, 40GB Hard Disk Drive (SSD highly recommended for better performance).</li>
                                     <li class="bx--list__item">For production environments, these requirements will be higher based on call volume and number of agents.</li>
                                 </ul>
@@ -178,7 +268,7 @@
                         </ol>
 
                         <h2>The VICIbox Installation Process: Step-by-Step</h2>
-                        
+
                         <h3>Step 1: Download the VICIbox ISO</h3>
                         <p>Navigate to <a href="http://vicibox.com/server_iso/" target="_blank" rel="noopener noreferrer" class="bx--link">VICIbox Download Page</a> and download the latest stable ISO file. It will be a large file, so ensure you have a stable internet connection.</p>
 
@@ -240,38 +330,50 @@
                         <h2>Why You Should Hire VICIgeek for Your VICIdial Installation</h2>
                         <p>At VICIgeek, we live and breathe VICIdial. We specialize in transforming this powerful open-source platform into a robust, reliable, and efficient call center solution tailored to your business. Here's how professional help from VICIgeek makes a difference:</p>
                         
-                        <div class="bx--row" style="margin-top: 1.5rem;">
+                        <div class="bx--row feature-card-row">
                             <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Save Time & Avoid Frustration</h4>
-                                <p>We handle the complexities, getting your VICIdial system installed and configured correctly the first time. This means you can focus on your core business operations instead of getting bogged down in technical troubleshooting.</p>
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Save Time & Avoid Frustration</h4>
+                                    <p>We handle the complexities, getting your VICIdial system installed and configured correctly the first time. This means you can focus on your core business operations instead of getting bogged down in technical troubleshooting.</p>
+                                </div>
                             </div>
                             <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Expert, Tidy & Optimized Configuration</h4>
-                                <p>A default install is rarely optimal. We configure VICIdial based on your specific call volume, agent count, campaign types, and business goals. Our approach is meticulous, resulting in a clean, tidy, and well-documented system that ensures stability, peak performance, and efficient resource utilization, making it easier to manage and maintain long-term.</p>
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Expert, Tidy & Optimized Configuration</h4>
+                                    <p>A default install is rarely optimal. We configure VICIdial based on your specific call volume, agent count, campaign types, and business goals. Our approach is meticulous, resulting in a clean, tidy, and well-documented system that ensures stability, peak performance, and efficient resource utilization, making it easier to manage and maintain long-term.</p>
+                                </div>
                             </div>
                             <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Security & Reliability Built-In</h4>
-                                <p>We implement security best practices from the ground up, protecting your system from common vulnerabilities and ensuring high availability for your critical call center operations. A tidy setup is inherently more secure and easier to monitor.</p>
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Security & Reliability Built-In</h4>
+                                    <p>We implement security best practices from the ground up, protecting your system from common vulnerabilities and ensuring high availability for your critical call center operations. A tidy setup is inherently more secure and easier to monitor.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bx--row" style="margin-top: 1.5rem;">
-                            <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Custom Solutions & Integrations</h4>
-                                <p>Need to integrate VICIdial with your CRM? Require custom reports, unique dialer behaviors, or specialized agent scripts? VICIgeek has the expertise to develop and implement these custom solutions seamlessly into your organized VICIdial environment.</p>
+                        <div class="bx--row feature-card-row">
+                             <div class="bx--col-md-4 bx--col-lg-4">
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Custom Solutions & Integrations</h4>
+                                    <p>Need to integrate VICIdial with your CRM? Require custom reports, unique dialer behaviors, or specialized agent scripts? VICIgeek has the expertise to develop and implement these custom solutions seamlessly into your organized VICIdial environment.</p>
+                                </div>
                             </div>
                             <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Comprehensive Training & Ongoing Support</h4>
-                                <p>We don't just install and leave. VICIgeek can provide training for your administrators and agents on your neatly configured system, and offer ongoing support plans to help as your call center grows and your needs evolve.</p>
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Comprehensive Training & Ongoing Support</h4>
+                                    <p>We don't just install and leave. VICIgeek can provide training for your administrators and agents on your neatly configured system, and offer ongoing support plans to help as your call center grows and your needs evolve.</p>
+                                </div>
                             </div>
                             <div class="bx--col-md-4 bx--col-lg-4">
-                                <h4 class="bx--h4">Cost-Effective Expertise</h4>
-                                <p>Investing in a professional, tidy setup by VICIgeek prevents costly mistakes, extended downtime, and security breaches that can arise from an improperly or messily configured system. Our expertise translates to long-term savings and operational peace of mind.</p>
+                                <div class="vicigeek-feature-card">
+                                    <h4 class="bx--h4">Cost-Effective Expertise</h4>
+                                    <p>Investing in a professional, tidy setup by VICIgeek prevents costly mistakes, extended downtime, and security breaches that can arise from an improperly or messily configured system. Our expertise translates to long-term savings and operational peace of mind.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="text-center" style="margin-top: 2.5rem; margin-bottom:1.5rem;">
+                        <div class="contact-cta-section">
                             <p class="bx--type-gamma"><strong>Ready for a professionally installed, optimized, and hassle-free VICIdial experience?</strong></p>
-                            <a href="index.html#contact" class="bx--btn bx--btn--primary bx--btn--lg" style="margin-top: 1rem;">Contact VICIgeek Today for a Free Consultation</a>
+                            <a href="index.html#contact" class="bx--btn bx--btn--primary bx--btn--lg">Contact VICIgeek Today for a Free Consultation</a>
                         </div>
                         
                         <hr class="bx--hr">
@@ -294,6 +396,12 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" rel="noopener noreferrer" class="telegram-fab" aria-label="Chat on Telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.4439 3.51001C21.8359 3.18201 22.3149 3.23601 22.6429 3.62901C22.9709 4.02201 22.9179 4.59801 22.5249 4.92601L19.3959 7.56101L3.39691 12.293L1.04291 5.10701C0.889912 4.64101 1.15891 4.13901 1.62491 3.98601C2.09091 3.83301 2.59291 4.10201 2.74591 4.56801L4.39091 9.35801L19.4969 5.00001L21.4439 3.51001ZM18.0489 9.03601L6.13891 13.08L7.40491 17.958L9.69991 15.99L10.5109 19.113C10.6919 19.779 11.4589 20.057 12.0519 19.749C12.2089 19.663 12.3489 19.547 12.4629 19.406L14.0709 17.444L17.0599 19.553C17.5459 19.881 18.1889 19.707 18.5169 19.221C18.8449 18.735 18.6709 18.092 18.1849 17.764L15.0429 15.558L18.7899 9.97201C19.0209 9.59501 18.8099 9.07201 18.4329 8.84101C18.0559 8.61001 17.5329 8.82101 17.3019 9.19801L13.7099 14.54L11.0779 12.32L18.0489 9.03601Z"/>
+        </svg>
+    </a>
 
     <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
     <script>
