@@ -1,395 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>VICIdial Installation on openSUSE | Fast, Secure, AI-Optimized Call Center Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Get expert VICIdial installation on openSUSE Linux. We deliver secure, production-ready predictive dialers with rapid deployment, AI-driven support, and ongoing maintenance. Start your call center fast with proven professionals." />
-  <meta name="keywords" content="vicidial installation, openSUSE dialer, predictive dialer setup, call center software, asterisk dialer, vicibox iso, ai call center, vicidial support, cloud dialer" />
-  <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css" />
-  <style>
-    :root {
-      --primary: #0f62fe;
-      --primary-dark: #0043ce;
-      --accent: #ffd600;
-      --success: #198038;
-      --gray-bg: #f4f4f4;
-      --card-bg: #fff;
-      --border: #e0e0e0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vicigeek - Vicidial Expert | Installation, Troubleshooting, Customization</title>
+    <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f4f4f4; /* Carbon Gray 10 */
+            color: #161616; /* Carbon Gray 100 */
+        }
 
-    html { font-size: 19px; }
-    body {
-      font-family: 'IBM Plex Sans', Arial, sans-serif;
-      margin: 0;
-      background: var(--gray-bg);
-      color: #161616;
-      line-height: 1.7;
-    }
-    .menu-bar {
-      background: var(--primary);
-      padding: 1.2rem 0 1rem 0;
-      box-shadow: 0 2px 10px rgba(15,98,254,0.07);
-    }
-    .menu {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      gap: 2.2rem;
-    }
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.22rem;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-      padding-bottom: 0.1em;
-      border-bottom: 2px solid transparent;
-    }
-    .menu a:hover {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-    header {
-      text-align: center;
-      background: linear-gradient(120deg, #e8f0fe 60%, #fff 100%);
-      padding: 4.5rem 1.3rem 3.1rem 1.3rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 2.1rem;
-    }
-    header h1 {
-      font-size: 2.9rem;
-      color: var(--primary-dark);
-      font-weight: 800;
-      letter-spacing: -2px;
-      margin-bottom: 0.7rem;
-    }
-    header p {
-      font-size: 1.3rem;
-      color: #333;
-      margin: 0.5rem auto 1.5rem auto;
-      max-width: 650px;
-      font-weight: 500;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 1.1rem 2.3rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.24rem;
-      text-decoration: none;
-      letter-spacing: 0.2px;
-      margin-top: 1.1rem;
-      margin-bottom: 0.7rem;
-      box-shadow: 0 2px 8px rgba(15,98,254,0.06);
-      transition: background 0.23s, box-shadow 0.2s;
-    }
-    .cta-btn:hover {
-      background: var(--primary-dark);
-      color: var(--accent);
-      box-shadow: 0 4px 22px rgba(15,98,254,0.09);
-    }
-    main {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 2.5rem 1.3rem 3rem 1.3rem;
-    }
+        /* Custom Hero Section Background */
+        .hero-section-bg {
+            background-color: #0f62fe; /* Carbon Blue 60 */
+            color: #ffffff; /* White text */
+        }
 
-    .card-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.3rem;
-      margin-bottom: 2.9rem;
-      justify-content: space-between;
-    }
-    .card {
-      flex: 1 1 300px;
-      min-width: 290px;
-      background: var(--card-bg);
-      border-radius: 1.3rem;
-      box-shadow: 0 2px 12px rgba(15,98,254,0.05);
-      padding: 2.2rem 2rem 1.4rem 2rem;
-      margin-bottom: 1.7rem;
-      border: 1px solid var(--border);
-      transition: box-shadow 0.21s, border-color 0.19s;
-      position: relative;
-      overflow: hidden;
-    }
-    .card:hover {
-      box-shadow: 0 6px 30px rgba(15,98,254,0.09);
-      border-color: var(--primary);
-    }
-    .card h2 {
-      font-size: 1.39rem;
-      margin-top: 0;
-      color: var(--primary-dark);
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      letter-spacing: -0.7px;
-    }
-    .card ul, .card p {
-      font-size: 1.03rem;
-      margin-bottom: 0.7rem;
-    }
-    .card .icon {
-      font-size: 2.1rem;
-      margin-bottom: 0.3rem;
-      color: var(--primary-dark);
-      display: block;
-    }
+        .hero-section-bg .bx--h1,
+        .hero-section-bg .bx--h4, /* Using h4 for paragraph for styling consistency */
+        .hero-section-bg .bx--p {
+            color: #ffffff;
+        }
 
-    .feature-section {
-      margin-bottom: 2.6rem;
-      background: #fafdff;
-      padding: 2rem 2rem 1rem 2rem;
-      border-radius: 1.2rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 9px rgba(15,98,254,0.025);
-    }
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.3rem 2.5rem;
-      margin-top: 1.3rem;
-      margin-bottom: 1.1rem;
-    }
-    .feature-list li {
-      font-size: 1.07rem;
-      margin-bottom: 0.1rem;
-      position: relative;
-      padding-left: 1.8em;
-      color: #222;
-    }
-    .feature-list li::before {
-      content: "✔";
-      color: var(--success);
-      position: absolute;
-      left: 0;
-      font-size: 1.09em;
-      top: 0;
-    }
+        /* Section Padding */
+        .page-section {
+            padding-top: 3rem; /* 48px */
+            padding-bottom: 3rem; /* 48px */
+        }
+        .page-section--less-padding {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
 
-    .pricing-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin: 1.4rem 0 2.3rem 0;
-      background: #f4f8ff;
-      border-radius: 11px;
-      overflow: hidden;
-      box-shadow: 0 1px 6px rgba(15,98,254,0.03);
-      font-size: 1.07rem;
-    }
-    .pricing-table th, .pricing-table td {
-      padding: 1.1rem 0.8rem;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-    }
-    .pricing-table th {
-      background: #e8efff;
-      color: var(--primary-dark);
-      font-size: 1.12rem;
-      font-weight: 700;
-    }
-    .pricing-table tr:last-child td { border-bottom: none; }
-    .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 0.7rem 1.4rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.06rem;
-      margin-top: 0.5rem;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background: var(--primary-dark);
-      color: var(--accent);
-    }
+        /* Centered text utility */
+        .text-center {
+            text-align: center;
+        }
 
-    .testimonials {
-      background: #fffbe5;
-      border-left: 5px solid var(--primary);
-      border-radius: 0.9rem;
-      padding: 1.7rem 2rem 1.2rem 2.2rem;
-      margin-bottom: 2.4rem;
-      margin-top: 1.3rem;
-      box-shadow: 0 1px 4px rgba(15,98,254,0.02);
-    }
-    .testimonials p {
-      font-size: 1.11rem;
-      margin-bottom: 0.7rem;
-      font-style: italic;
-    }
-    .testimonials strong { color: var(--primary-dark); }
+        /* Custom card styling if needed, though Carbon Tiles are preferred */
+        .custom-card {
+            background-color: #ffffff; /* White */
+            padding: 1.5rem; /* 24px */
+            margin-bottom: 1rem; /* 16px */
+            /* Carbon tiles bx--tile already have similar styling */
+        }
+        .custom-card h3 {
+            margin-bottom: 0.5rem;
+        }
 
-    .cta-section {
-      text-align: center;
-      margin: 2.5rem auto 0 auto;
-    }
-    .cta-section h2 {
-      font-size: 1.6rem;
-      color: var(--success);
-      font-weight: 800;
-      margin-bottom: 0.7rem;
-    }
+        /* Ensure icons are vertically aligned with text */
+        .icon-text-align svg {
+            vertical-align: middle;
+            margin-right: 0.5rem; /* 8px */
+        }
 
-    @media (max-width: 900px) {
-      .card-row { flex-direction: column; gap: 1.4rem; }
-      main { padding: 1rem 0.2rem 2rem 0.2rem; }
-    }
-    @media (max-width: 600px) {
-      header { padding: 2.1rem 0.7rem 1.3rem 0.7rem; }
-      .feature-section { padding: 1.3rem 0.7rem 0.7rem 0.7rem; }
-      .card { padding: 1.1rem 0.8rem 1rem 0.8rem; }
-      .testimonials { padding: 1.1rem 1rem 0.8rem 1.3rem; }
-      .cta-section { padding: 0 0.3rem; }
-      .menu { flex-direction: column; gap: 0.7rem; align-items: center; }
-    }
+        /* Table cell vertical alignment */
+        .bx--data-table td, .bx--data-table th {
+            vertical-align: middle;
+        }
+        .bx--data-table .text-center {
+            text-align: center;
+        }
+        .bx--data-table .text-green {
+            color: #24a148; /* Carbon Green 50 */
+        }
+        .bx--data-table .text-blue {
+            color: #0f62fe; /* Carbon Blue 60 */
+        }
+        .bx--data-table .text-gray {
+            color: #a8a8a8; /* Carbon Gray 50 */
+        }
 
-    footer {
-      text-align: center;
-      padding: 2.8rem 1rem 1.6rem 1rem;
-      font-size: 1.05rem;
-      color: #999;
-      margin-top: 3rem;
-    }
-    footer a { color: var(--primary); text-decoration: none; font-weight: 600;}
-    footer a:hover { text-decoration: underline;}
-  </style>
+        /* Ensure full width for form items in a single column layout */
+        .contact-form-width .bx--form-item {
+            width: 100%;
+        }
+        
+        /* Sticky Header Adjustment */
+        body {
+            padding-top: 3rem; /* Height of the header */
+        }
+        .bx--header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 8000; /* Carbon's z-index for header */
+        }
+
+        /* Section title styling */
+        .section-title {
+            margin-bottom: 2rem; /* 32px */
+        }
+
+        /* Footer styling */
+        .custom-footer {
+            background-color: #161616; /* Carbon Gray 100 */
+            color: #f4f4f4; /* Carbon Gray 10 */
+            padding: 2rem 0;
+        }
+        .custom-footer p {
+             color: #c6c6c6; /* Carbon Gray 30 for better readability */
+        }
+
+        /* Make tiles in a row equal height */
+        .bx--row--equal-height .bx--tile {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+         .bx--tile.custom-service-tile {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+    </style>
 </head>
-<body>
+<body data-carbon-theme="g10"> <header data-header class="bx--header">
+        <a href="#" class="bx--header__name">
+            <span class="bx--header__name--prefix">&nbsp;</span>Vicigeek
+        </a>
+        <nav class="bx--header__nav">
+            <ul class="bx--header__menu-bar">
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#services">Services</a>
+                </li>
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#features">Features</a>
+                </li>
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#comparison">Comparison</a>
+                </li>
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#case-studies">Case Studies</a>
+                </li>
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#guides">Guides</a>
+                </li>
+                <li class="bx--header__menu-item">
+                    <a class="bx--header__menu-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bx--header__global">
+            <button class="bx--header__action bx--header__menu-trigger bx--header__menu-toggle"
+                aria-label="Open menu" title="Open menu" data-navigation-menu-panel-label="Menu"
+                data-header-menu-button>
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--header__menu-icon" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6H28V8H4zM4 15H28V17H4zM4 24H28V26H4z"></path></svg>
+            </button>
+        </div>
+    </header>
 
-<div class="menu-bar">
-  <nav class="menu" aria-label="Main Navigation">
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</div>
+    <aside class="bx--side-nav bx--side-nav--ux" data-side-nav data- μεγαλύτερο-side-nav-id=" μεγαλύτερο-side-nav">
+        <nav class="bx--side-nav__items">
+            <ul class="bx--side-nav__menu">
+                <li class="bx--side-nav__menu-item">
+                    <a href="#services" class="bx--side-nav__link">Services</a>
+                </li>
+                <li class="bx--side-nav__menu-item">
+                    <a href="#features" class="bx--side-nav__link">Features</a>
+                </li>
+                <li class="bx--side-nav__menu-item">
+                    <a href="#comparison" class="bx--side-nav__link">Comparison</a>
+                </li>
+                <li class="bx--side-nav__menu-item">
+                    <a href="#case-studies" class="bx--side-nav__link">Case Studies</a>
+                </li>
+                <li class="bx--side-nav__menu-item">
+                    <a href="#guides" class="bx--side-nav__link">Guides</a>
+                </li>
+                 <li class="bx--side-nav__menu-item">
+                    <a href="#contact" class="bx--side-nav__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-<header>
-  <h1>VICIdial Installation<br>on openSUSE Linux</h1>
-  <p>
-    <strong>Launch your call center fast with our expert, AI-optimized VICIdial setup.</strong><br>
-    Secure, scalable predictive dialers—ready in hours, with full support and ongoing retainer options.
-  </p>
-  <a href="mailto:vicigeek@gmail.com?subject=VICIdial%20Install%20Inquiry" class="cta-btn">Get Started Now</a>
-</header>
+    <main class="bx--content">
+        <section class="hero-section-bg page-section">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-10 bx--offset-lg-1 text-center">
+                        <h1 class="bx--h1" style="margin-bottom: 1.5rem;">Expert Vicidial Solutions for Your Call Center</h1>
+                        <p class="bx--type-zeta" style="margin-bottom: 2.5rem; max-width: 720px; margin-left:auto; margin-right:auto;">
+                            Your dedicated freelance partner for Vicidial installation, troubleshooting, custom development, and optimization. Maximize your call center's potential.
+                        </p>
+                        <a href="#contact" class="bx--btn bx--btn--secondary bx--btn--lg">Get a Free Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<main>
-  <div class="card-row">
-    <div class="card">
-      <span class="icon">⚡</span>
-      <h2>Fast, Hassle-Free Setup</h2>
-      <p>Full VICIdial installation on openSUSE using the official ViciBox ISO, configured for maximum stability and compliance. Go live in as little as <strong>1 hour</strong>—no guesswork, no wasted days.</p>
-      <ul>
-        <li>Official ViciBox ISO deployment</li>
-        <li>Asterisk, Apache, MySQL/MariaDB, PHP, Web UI</li>
-        <li>SIP trunk & carrier integration</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="icon">🛡️</span>
-      <h2>Security & Compliance</h2>
-      <p>Your dialer is protected from day one. We apply best-practice security, including:</p>
-      <ul>
-        <li>Firewalls & fail2ban</li>
-        <li>Secure database/user setup</li>
-        <li>Regular updates and vulnerability scanning</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="icon">🤖</span>
-      <h2>AI-Powered Optimization</h2>
-      <p>From install to scale, we use AI tools for:</p>
-      <ul>
-        <li>Faster troubleshooting & root-cause analysis</li>
-        <li>Performance tuning and campaign insights</li>
-        <li>24/7 monitoring (optional retainer)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <span class="icon">💼</span>
-      <h2>Ongoing Support & Retainers</h2>
-      <p>Stay worry-free with weekly support plans:</p>
-      <ul>
-        <li>Performance tuning & upgrades</li>
-        <li>Bug fixes & agent assistance</li>
-        <li>Cloud migration & scaling</li>
-      </ul>
-    </div>
-  </div>
+        <section id="services" class="page-section">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12 text-center">
+                        <h2 class="bx--h2 section-title">Our Vicidial Services</h2>
+                    </div>
+                </div>
+                <div class="bx--row bx--row--equal-height" data-items-per-row="3">
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                        <div class="bx--tile custom-service-tile">
+                            <div class="icon-text-align" style="margin-bottom: 1rem;">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M25,20H23V18h2V16H23V14h2V12H23V10h2V8H23V6H21V8H19V6H17V8H15V6H13V8H11V6H9V8H7v2H9v2H7v2H9v2H7v2H9v2H7v2H9v2h2V26h2V24h2V26h2V24h2V26h2V24h2Zm-4-6H11V12h2V10h6v2h2Z"></path><path d="M28,2H4A2,2,0,0,0,2,4V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V4A2,2,0,0,0,28,2ZM4,28V4H28V28Z"></path></svg>
+                                <h3 class="bx--h4">Vicidial Installation</h3>
+                            </div>
+                            <p class="bx--type-epsilon">
+                                Professional setup and configuration of Vicidial on your servers, ensuring optimal performance and security from day one.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                        <div class="bx--tile custom-service-tile">
+                           <div class="icon-text-align" style="margin-bottom: 1rem;">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M16,2A13.941,13.941,0,0,0,4.381,6.842L5.8,8.26A11.939,11.939,0,1,1,5.8,23.74L4.381,25.158A13.941,13.941,0,1,0,16,2Z"></path><path d="M16,10a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,10Zm0,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,17Zm0-3.5a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,13.5Z"></path><path d="M22.631,10.252,20.2,11.6A5.931,5.931,0,0,0,16,9.369V6A9.92,9.92,0,0,1,22.631,10.252Z"></path></svg>
+                                <h3 class="bx--h4">Troubleshooting & Support</h3>
+                            </div>
+                            <p class="bx--type-epsilon">
+                                Rapid diagnosis and resolution of Vicidial issues, minimizing downtime and keeping your operations running smoothly. Ongoing support available.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-4 bx--no-gutter--sm">
+                        <div class="bx--tile custom-service-tile">
+                            <div class="icon-text-align" style="margin-bottom: 1rem;">
+                                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13,22H3V12H5V2H27V12H29v8H19v8H13ZM5,20H17V18H13V16h4V14H13V12h4V10H5Zm2-10H25V4H7Z"></path></svg>
+                                <h3 class="bx--h4">Vicidial Customization</h3>
+                            </div>
+                           <p class="bx--type-epsilon">
+                                Tailoring Vicidial to your specific business needs, including custom scripting (AGI), CRM integrations, API development, and unique reporting solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="feature-section">
-    <h2>Why Choose Us for Your VICIdial Install?</h2>
-    <ul class="feature-list">
-      <li>✓ 100% success rate—over 100+ call centers launched</li>
-      <li>✓ AI-powered support for quick, accurate solutions</li>
-      <li>✓ Deep openSUSE & Linux expertise</li>
-      <li>✓ Secure, compliance-ready installs</li>
-      <li>✓ Fast turnaround—most setups delivered in 24-48h</li>
-      <li>✓ Retainer & SLA plans for peace of mind</li>
-      <li>✓ Custom cloud, multi-server, and failover deployments</li>
-      <li>✓ Detailed handover docs & training for your team</li>
-    </ul>
-  </section>
+        <section id="features" class="page-section" style="background-color: #ffffff;">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12 text-center">
+                        <h2 class="bx--h2 section-title">Why Choose Vicigeek?</h2>
+                    </div>
+                </div>
+                <div class="bx--row">
+                    <div class="bx--col-md-4 bx--col-lg-3">
+                        <div class="text-center" style="padding: 1rem;">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--icon--xl" style="margin-bottom: 1rem;" width="48" height="48" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM22.3,13.3l-7.9,7.9a1,1,0,0,1-1.4,0l-4.1-4.1a1,1,0,0,1,1.4-1.4L14,19.1l7.2-7.2a1,1,0,1,1,1.4,1.4Z"></path></svg>
+                            <h3 class="bx--h4">Deep Expertise</h3>
+                            <p class="bx--type-epsilon">Years of hands-on experience with all aspects of Vicidial.</p>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-3">
+                        <div class="text-center" style="padding: 1rem;">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--icon--xl" style="margin-bottom: 1rem;" width="48" height="48" viewBox="0 0 32 32" aria-hidden="true"><path d="M16,4V8l8,4-8,4V20l12-7Z"></path><path d="M4,13l8,4V8L4,13Z"></path><path d="M4,20l8-4v9L4,20Z"></path></svg>
+                            <h3 class="bx--h4">Fast Turnaround</h3>
+                            <p class="bx--type-epsilon">Efficient service to get your solutions implemented quickly.</p>
+                        </div>
+                    </div>
+                    <div class="bx--col-md-4 bx--col-lg-3">
+                        <div class="text-center" style="padding: 1rem;">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--icon--xl" style="margin-bottom: 1rem;" width="48" height="48" viewBox="0 0 32 32" aria-hidden="true"><path d="M25,20.586V23a2,2,0,0,1-2,2H9a2,2,0,0,1-2-2V9A2,2,0,0,1,9,7h2.414l5-5L21.586,7H24a2,2,0,0,1,2,2v3.414l4.293,4.293a1,1,0,0,1,0,1.414L25,20.586zM9,23H23V9H9v7.586L7,18.293A1,1,0,0,1,7,16.879L9,14.879V9zM15,10h2v2H15V10zm0,4h2v6H15V14z"></path></svg>
+                            <h3 class="bx--h4">Cost-Effective</h3>
+                            <p class="bx--type-epsilon">Freelancer rates providing excellent value for top-tier skills.</p>
+                        </div>
+                    </div>
+                     <div class="bx--col-md-4 bx--col-lg-3">
+                        <div class="text-center" style="padding: 1rem;">
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bx--icon--xl" style="margin-bottom: 1rem;" width="48" height="48" viewBox="0 0 32 32" aria-hidden="true"><path d="M16,2A10.0112,10.0112,0,0,0,6,12c0,3.5059,2.6836,8.0723,9.1553,13.5312.4316.3662.8789.7158,1.32.9942a1.0005,1.0005,0,0,0,1.0492,0c.4414-.2784.8886-.628,1.32-.9942C25.3164,20.0723,28,15.5059,28,12A10.0112,10.0112,0,0,0,16,2Zm0,15a5,5,0,1,1,5-5A5.0058,5.0058,0,0,1,16,17Z"></path><path fill="none" d="M16,2A10.0112,10.0112,0,0,0,6,12c0,3.5059,2.6836,8.0723,9.1553,13.5312.4316.3662.8789.7158,1.32.9942a1.0005,1.0005,0,0,0,1.0492,0c.4414-.2784.8886-.628,1.32-.9942C25.3164,20.0723,28,15.5059,28,12A10.0112,10.0112,0,0,0,16,2Zm0,15a5,5,0,1,1,5-5A5.0058,5.0058,0,0,1,16,17Z" data-icon-path="inner-path" opacity="0"></path></svg>
+                            <h3 class="bx--h4">Personalized Service</h3>
+                            <p class="bx--type-epsilon">Direct communication and solutions tailored to your unique needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section>
-    <h2>Transparent Pricing</h2>
-    <table class="pricing-table" aria-label="VICIdial Installation Pricing">
-      <thead>
-        <tr>
-          <th>Package</th>
-          <th>Details</th>
-          <th>Price (USD)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Standard Installation</td>
-          <td>Single-server VICIdial on openSUSE with all core features. Delivered within 48 hours.</td>
-          <td><strong>$200</strong></td>
-        </tr>
-        <tr>
-          <td>Custom Deployments</td>
-          <td>Cloud, multi-server, advanced security, or custom dialplan logic.</td>
-          <td>
-            <a href="mailto:vicigeek@gmail.com?subject=Custom%20VICIdial%20Quote" class="btn">Request Quote</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+        <section id="comparison" class="page-section">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12 text-center">
+                        <h2 class="bx--h2 section-title">Service Offerings Overview</h2>
+                    </div>
+                </div>
+                <div class="bx--row">
+                    <div class="bx--col-lg-12">
+                        <table class="bx--data-table bx--data-table--zebra">
+                            <thead>
+                                <tr>
+                                    <th><span class="bx--table-header-label">Service Component</span></th>
+                                    <th class="text-center"><span class="bx--table-header-label">Installation</span></th>
+                                    <th class="text-center"><span class="bx--table-header-label">Troubleshooting</span></th>
+                                    <th class="text-center"><span class="bx--table-header-label">Customization</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Initial Setup & Configuration</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-gray">-</td>
+                                    <td class="text-center text-gray">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Server Optimization</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-green">✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Issue Diagnosis & Bug Fixing</td>
+                                    <td class="text-center text-gray">-</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-gray">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Custom Scripting (AGI, Perl)</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-green">✓</td>
+                                </tr>
+                                <tr>
+                                    <td>CRM / 3rd Party Integrations</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-green">✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Custom Reporting & Dashboards</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-green">✓</td>
+                                </tr>
+                                 <tr>
+                                    <td>API Development & Integration</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-green">✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Carrier & Trunk Configuration</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-blue">O</td>
+                                </tr>
+                                 <tr>
+                                    <td>Security Hardening</td>
+                                    <td class="text-center text-green">✓</td>
+                                    <td class="text-center text-blue">O</td>
+                                    <td class="text-center text-blue">O</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-center bx--type-caption" style="margin-top: 1rem;">✓ = Included Core Service &nbsp;&nbsp;&nbsp; O = Optional / Add-on Service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="testimonials">
-    <p>
-      <strong>“Our dialer was live in less than a day, and we haven't had a single issue since. Support is fast and truly understands VICIdial and Linux.”</strong><br>
-      <span>– Happy Call Center Manager, US Healthcare BPO</span>
-    </p>
-    <p>
-      <strong>“We switched to their team after two failed scratch installs. Night and day difference—now everything just works.”</strong><br>
-      <span>– Sales Director, International Travel Agency</span>
-    </p>
-  </section>
+        <section id="case-studies" class="page-section" style="background-color: #ffffff;">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12 text-center">
+                        <h2 class="bx--h2 section-title">Case Studies</h2>
+                        <p class="bx--type-zeta">Discover how Vicigeek has helped businesses like yours succeed with Vicidial.</p>
+                        <div style="margin-top: 2rem; padding: 2rem; border: 1px dashed #a8a8a8;">
+                             <p class="bx--type-epsilon">Content for Case Studies coming soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="cta-section">
-    <h2>Ready to launch your call center?</h2>
-    <p>
-      Don't risk downtime or compliance headaches. Choose <strong>AI-optimized VICIdial installation</strong> on openSUSE—backed by real Linux experts.<br>
-      <a href="mailto:vicigeek@gmail.com?subject=VICIdial%20Install%20Now" class="cta-btn">Book My Installation</a>
-    </p>
-  </section>
-</main>
+        <section id="guides" class="page-section">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-12 text-center">
+                        <h2 class="bx--h2 section-title">Guides & Resources</h2>
+                        <p class="bx--type-zeta">Explore helpful guides and resources for Vicidial users and administrators.</p>
+                        <div style="margin-top: 2rem; padding: 2rem; border: 1px dashed #a8a8a8;">
+                            <p class="bx--type-epsilon">Content for Guides coming soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<footer>
-  &copy; 2025 vicigeek · AI-Optimized VICIdial Solutions · <a href="https://github.com/vicigeek" target="_blank">View on GitHub</a>
-</footer>
+        <section id="contact" class="page-section" style="background-color: #ffffff;">
+            <div class="bx--grid">
+                <div class="bx--row">
+                    <div class="bx--col-lg-8 bx--offset-lg-2">
+                        <div class="text-center">
+                             <h2 class="bx--h2 section-title">Get in Touch</h2>
+                        </div>
+                        <div class="bx--tile contact-form-width" style="padding: 2rem;">
+                            <p class="text-center bx--type-zeta" style="margin-bottom: 2rem;">
+                                Ready to enhance your Vicidial system or need expert help? Fill out the form below or email me directly at
+                                <a href="mailto:vicigeek@gmail.com" class="bx--link">vicigeek@gmail.com</a>.
+                            </p>
+                            <form id="contactForm">
+                                <div class="bx--form-item">
+                                    <label for="name" class="bx--label">Full Name</label>
+                                    <input id="name" name="name" type="text" class="bx--text-input" required>
+                                </div>
+                                <div class="bx--form-item" style="margin-top:1.5rem;">
+                                    <label for="email" class="bx--label">Email Address</label>
+                                    <input id="email" name="email" type="email" class="bx--text-input" required>
+                                </div>
+                                <div class="bx--form-item" style="margin-top:1.5rem;">
+                                    <label for="subject" class="bx--label">Subject</label>
+                                    <input id="subject" name="subject" type="text" class="bx--text-input" required>
+                                </div>
+                                <div class="bx--form-item" style="margin-top:1.5rem;">
+                                    <label for="message" class="bx--label">Message</label>
+                                    <textarea id="message" name="message" class="bx--text-area" rows="5" required></textarea>
+                                </div>
+                                <div class="bx--form-item" style="margin-top:2rem;">
+                                    <button class="bx--btn bx--btn--primary" type="submit" style="width:100%;">Send Message</button>
+                                </div>
+                            </form>
+                            <div id="form-status" class="text-center bx--type-caption" style="margin-top: 1rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="custom-footer page-section--less-padding">
+        <div class="bx--grid">
+            <div class="bx--row">
+                <div class="bx--col-lg-16 text-center">
+                    <p class="bx--type-caption">&copy; <span id="currentYear"></span> Vicigeek. All rights reserved.</p>
+                    <p class="bx--type-helper-text-01" style="margin-top: 0.25rem;">Freelance Vicidial Specialist</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+    <script>
+        // Initialize Carbon components
+        // CarbonComponents.watch(document); // For dynamic content, not strictly needed for static if all components are in initial HTML
+
+        // Contact Form Handling (mailto link)
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:vicigeek@gmail.com?subject=${encodeURIComponent(subject + " - From " + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+            
+            window.location.href = mailtoLink;
+
+            formStatus.textContent = "Your email client should open. If not, please manually email vicigeek@gmail.com.";
+            formStatus.classList.add('bx--form__helper-text'); // Using Carbon class for styling
+            
+            // Optionally, clear the form
+            // setTimeout(() => {
+            //     contactForm.reset();
+            //     formStatus.textContent = "";
+            // }, 5000);
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for navigation links (Carbon side-nav might handle this, but good to have)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Only prevent default for actual internal links, not for "#" or empty href
+                if (href && href.startsWith('#') && href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        // Close side nav if open (Carbon might do this automatically)
+                        const sideNav = document.querySelector('[data-side-nav]');
+                        if (sideNav && sideNav.classList.contains('bx--side-nav--expanded')) {
+                           // Carbon's JS should handle closing.
+                           // For explicit control, you might need to find the instance and call a method:
+                           // const sideNavInstance = CarbonComponents.SideNav.components.get(sideNav);
+                           // if (sideNavInstance) { sideNavInstance.close(); }
+                        }
+                        
+                        // Adjust for fixed header height
+                        const headerHeight = document.querySelector('.bx--header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
